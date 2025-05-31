@@ -8,7 +8,7 @@ public class Advanced implements GameLevel {
     }
 
     @Override
-    public int gettColSize() {
+    public int getColSize() {
         return 24;
     }
 

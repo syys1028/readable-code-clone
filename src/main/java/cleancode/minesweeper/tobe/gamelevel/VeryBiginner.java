@@ -8,7 +8,7 @@ public class VeryBiginner implements GameLevel {
     }
 
     @Override
-    public int gettColSize() {
+    public int getColSize() {
         return 5;
     }
 

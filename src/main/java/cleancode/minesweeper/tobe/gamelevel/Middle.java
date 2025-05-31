@@ -8,7 +8,7 @@ public class Middle implements GameLevel{
     }
 
     @Override
-    public int gettColSize() {
+    public int getColSize() {
         return 18;
     }
 

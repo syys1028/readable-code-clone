@@ -4,7 +4,7 @@ public interface GameLevel {
 
     int getRowSize();
 
-    int gettColSize();
+    int getColSize();
 
     int getLandMineCount();
 

@@ -1,6 +1,8 @@
-package cleancode.studycafe.mission.model;
+package cleancode.studycafe.mission.studyCafe.model.order;
 
-public class StudyCafeLockerPass implements PassDisplay{
+import cleancode.studycafe.mission.studyCafe.view.PassDisplay;
+
+public class StudyCafeLockerPass implements PassDisplay {
 
     private final StudyCafePassType passType;
     private final int duration;

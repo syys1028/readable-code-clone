@@ -1,4 +1,4 @@
-package cleancode.studycafe.mission.model;
+package cleancode.studycafe.mission.studyCafe.model.order;
 
 public enum StudyCafePassType {
 

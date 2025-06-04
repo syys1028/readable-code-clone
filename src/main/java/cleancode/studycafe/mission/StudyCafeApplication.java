@@ -1,5 +1,7 @@
 package cleancode.studycafe.mission;
 
+import cleancode.studycafe.mission.studyCafe.StudyCafePassMachine;
+
 public class StudyCafeApplication {
 
     public static void main(String[] args) {

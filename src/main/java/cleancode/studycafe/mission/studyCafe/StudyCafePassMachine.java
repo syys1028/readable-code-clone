@@ -1,14 +1,12 @@
-package cleancode.studycafe.mission;
+package cleancode.studycafe.mission.studyCafe;
 
-import cleancode.studycafe.mission.exception.AppException;
-import cleancode.studycafe.mission.io.InputHandler;
-import cleancode.studycafe.mission.io.OutputHandler;
-import cleancode.studycafe.mission.io.StudyCafeFileHandler;
-import cleancode.studycafe.mission.io.StudyCafeIOHandler;
-import cleancode.studycafe.mission.model.PassOrder;
-import cleancode.studycafe.mission.model.StudyCafeLockerPass;
-import cleancode.studycafe.mission.model.StudyCafePass;
-import cleancode.studycafe.mission.model.StudyCafePassType;
+import cleancode.studycafe.mission.studyCafe.exception.AppException;
+import cleancode.studycafe.mission.studyCafe.io.StudyCafeFileHandler;
+import cleancode.studycafe.mission.studyCafe.io.StudyCafeIOHandler;
+import cleancode.studycafe.mission.studyCafe.model.pass.PassOrder;
+import cleancode.studycafe.mission.studyCafe.model.order.StudyCafeLockerPass;
+import cleancode.studycafe.mission.studyCafe.model.order.StudyCafePass;
+import cleancode.studycafe.mission.studyCafe.model.order.StudyCafePassType;
 
 import java.util.List;
 import java.util.Optional;

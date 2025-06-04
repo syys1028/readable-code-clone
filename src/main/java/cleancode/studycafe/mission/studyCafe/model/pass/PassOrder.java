@@ -1,4 +1,7 @@
-package cleancode.studycafe.mission.model;
+package cleancode.studycafe.mission.studyCafe.model.pass;
+
+import cleancode.studycafe.mission.studyCafe.model.order.StudyCafeLockerPass;
+import cleancode.studycafe.mission.studyCafe.model.order.StudyCafePass;
 
 public class PassOrder {
     private final StudyCafePass pass;

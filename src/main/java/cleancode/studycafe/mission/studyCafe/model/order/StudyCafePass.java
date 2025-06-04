@@ -1,6 +1,8 @@
-package cleancode.studycafe.mission.model;
+package cleancode.studycafe.mission.studyCafe.model.order;
 
-public class StudyCafePass implements PassDisplay{
+import cleancode.studycafe.mission.studyCafe.view.PassDisplay;
+
+public class StudyCafePass implements PassDisplay {
 
     private final StudyCafePassType passType;
     private final int duration;
@@ -44,15 +46,6 @@ public class StudyCafePass implements PassDisplay{
 
     public int calculateDiscountPrice() {
         return (int) (price * getDiscountRate());
-    }
-
-    public int calculateDiscountedPrice() {
-        return getPrice() - calculateDiscountPrice();
-    }
-
-    public int calculateTotalPriceWith(StudyCafeLockerPass lockerPass) {
-        int lockerPrice = lockerPass != null ? lockerPass.getPrice() : 0;
-        return price - calculateDiscountPrice() + lockerPrice;
     }
 
 }

@@ -1,8 +1,9 @@
-package cleancode.studycafe.mission.io;
+package cleancode.studycafe.mission.studyCafe.io;
 
-import cleancode.studycafe.mission.model.StudyCafeLockerPass;
-import cleancode.studycafe.mission.model.StudyCafePass;
-import cleancode.studycafe.mission.model.StudyCafePassType;
+import cleancode.studycafe.mission.studyCafe.exception.FileReadException;
+import cleancode.studycafe.mission.studyCafe.model.order.StudyCafeLockerPass;
+import cleancode.studycafe.mission.studyCafe.model.order.StudyCafePass;
+import cleancode.studycafe.mission.studyCafe.model.order.StudyCafePassType;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -17,7 +18,7 @@ public class StudyCafeFileHandler {
                 .map(line -> line.split(","))
                 .toList();
         } catch (IOException e) {
-            throw new RuntimeException("파일을 읽는데 실패했습니다.", e);
+            throw new FileReadException("CSV 파일을 읽는데 실패했습니다: " + filePath, e);
         }
     }
 

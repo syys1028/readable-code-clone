@@ -1,6 +1,6 @@
 package cleancode.studycafe.mission;
 
-import cleancode.studycafe.mission.studyCafe.StudyCafePassMachine;
+import cleancode.studycafe.mission.studycafe.StudyCafePassMachine;
 
 public class StudyCafeApplication {
 

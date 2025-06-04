@@ -1,7 +1,7 @@
-package cleancode.studycafe.mission.studyCafe.io;
+package cleancode.studycafe.mission.studycafe.io;
 
-import cleancode.studycafe.mission.studyCafe.exception.FileReadException;
-import cleancode.studycafe.mission.studyCafe.model.pass.*;
+import cleancode.studycafe.mission.studycafe.exception.FileReadException;
+import cleancode.studycafe.mission.studycafe.model.pass.*;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -9,16 +9,6 @@ import java.nio.file.Paths;
 import java.util.List;
 
 public class StudyCafeFileHandler {
-
-    private List<String[]> readCsvLines(String filePath) {
-        try {
-            return Files.readAllLines(Paths.get(filePath)).stream()
-                .map(line -> line.split(","))
-                .toList();
-        } catch (IOException e) {
-            throw new FileReadException("CSV 파일을 읽는데 실패했습니다: " + filePath, e);
-        }
-    }
 
     public StudyCafePasses readStudyCafePasses() {
         return new StudyCafePasses(
@@ -44,4 +34,13 @@ public class StudyCafeFileHandler {
         );
     }
 
+    private List<String[]> readCsvLines(String filePath) {
+        try {
+            return Files.readAllLines(Paths.get(filePath)).stream()
+                .map(line -> line.split(","))
+                .toList();
+        } catch (IOException e) {
+            throw new FileReadException("CSV 파일을 읽는데 실패했습니다: " + filePath, e);
+        }
+    }
 }

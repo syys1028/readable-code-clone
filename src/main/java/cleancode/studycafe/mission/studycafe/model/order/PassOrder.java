@@ -1,7 +1,7 @@
-package cleancode.studycafe.mission.studyCafe.model.order;
+package cleancode.studycafe.mission.studycafe.model.order;
 
-import cleancode.studycafe.mission.studyCafe.model.pass.StudyCafeLockerPass;
-import cleancode.studycafe.mission.studyCafe.model.pass.StudyCafePass;
+import cleancode.studycafe.mission.studycafe.model.pass.StudyCafeLockerPass;
+import cleancode.studycafe.mission.studycafe.model.pass.StudyCafePass;
 
 public class PassOrder {
     private final StudyCafePass pass;
@@ -14,7 +14,7 @@ public class PassOrder {
 
     public int calculateTotalPrice() {
         int lockerPrice = lockerPass != null ? lockerPass.getPrice() : 0;
-        return pass.getPrice() - pass.calculateDiscountPrice() + lockerPrice;
+        return pass.calculateDiscountedPrice() + lockerPrice;
     }
 
     public StudyCafePass getPass() {

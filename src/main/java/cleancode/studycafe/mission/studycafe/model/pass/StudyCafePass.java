@@ -1,6 +1,6 @@
-package cleancode.studycafe.mission.studyCafe.model.pass;
+package cleancode.studycafe.mission.studycafe.model.pass;
 
-import cleancode.studycafe.mission.studyCafe.view.PassDisplay;
+import cleancode.studycafe.mission.studycafe.view.PassDisplay;
 
 public class StudyCafePass implements PassDisplay {
 
@@ -20,10 +20,6 @@ public class StudyCafePass implements PassDisplay {
         return new StudyCafePass(passType, duration, price, discountRate);
     }
 
-    public StudyCafePassType getPassType() {
-        return passType;
-    }
-
     public boolean isFixedType() {
         return this.passType == StudyCafePassType.FIXED;
     }
@@ -32,20 +28,31 @@ public class StudyCafePass implements PassDisplay {
         return this.passType == type;
     }
 
+    public int calculateDiscountPrice() {
+        return (int) (price * getDiscountRate());
+    }
+
+    public int calculateDiscountedPrice() {
+        return getPrice() - calculateDiscountPrice();
+    }
+
+    @Override
+    public StudyCafePassType getPassType() {
+        return passType;
+    }
+
+    @Override
     public int getDuration() {
         return duration;
     }
 
+    @Override
     public int getPrice() {
         return price;
     }
 
     public double getDiscountRate() {
         return discountRate;
-    }
-
-    public int calculateDiscountPrice() {
-        return (int) (price * getDiscountRate());
     }
 
 }

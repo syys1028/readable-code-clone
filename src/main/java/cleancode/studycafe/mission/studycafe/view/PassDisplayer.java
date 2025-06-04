@@ -1,6 +1,6 @@
-package cleancode.studycafe.mission.studyCafe.view;
+package cleancode.studycafe.mission.studycafe.view;
 
-import cleancode.studycafe.mission.studyCafe.model.pass.StudyCafePassType;
+import cleancode.studycafe.mission.studycafe.model.pass.StudyCafePassType;
 
 public class PassDisplayer {
     public static String display(PassDisplay pass) {

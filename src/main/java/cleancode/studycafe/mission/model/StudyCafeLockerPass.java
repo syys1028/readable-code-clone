@@ -20,6 +20,11 @@ public class StudyCafeLockerPass {
         return passType;
     }
 
+    public boolean matchesPass(StudyCafePass pass) {
+        return this.passType == pass.getPassType()
+            && this.duration == pass.getDuration();
+    }
+
     public int getDuration() {
         return duration;
     }

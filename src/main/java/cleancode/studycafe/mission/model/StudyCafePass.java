@@ -22,6 +22,14 @@ public class StudyCafePass {
         return passType;
     }
 
+    public boolean isFixedType() {
+        return this.passType == StudyCafePassType.FIXED;
+    }
+
+    public boolean hasSameTypeAs(StudyCafePassType type) {
+        return this.passType == type;
+    }
+
     public int getDuration() {
         return duration;
     }

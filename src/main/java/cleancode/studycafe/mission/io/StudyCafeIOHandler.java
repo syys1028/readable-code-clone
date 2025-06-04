@@ -11,11 +11,8 @@ public class StudyCafeIOHandler {
     private final InputHandler inputHandler = new InputHandler();
     private final OutputHandler outputHandler = new OutputHandler();
 
-    public void showWelcomeMessage() {
+    public void showStartupMessage() {
         outputHandler.showWelcomeMessage();
-    }
-
-    public void showAnnouncement() {
         outputHandler.showAnnouncement();
     }
 
@@ -28,7 +25,7 @@ public class StudyCafeIOHandler {
     }
 
     public StudyCafePassType askPassTypeSelecting() {
-        outputHandler.askPassTypeSelection();
+        outputHandler.showPassTypeSelection();
         return inputHandler.getPassTypeSelectingUserAction();
     }
 

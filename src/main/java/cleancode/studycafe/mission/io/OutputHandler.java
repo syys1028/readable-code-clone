@@ -17,7 +17,7 @@ public class OutputHandler {
         System.out.println();
     }
 
-    public void askPassTypeSelection() {
+    public void showPassTypeSelection() {
         System.out.println("사용하실 이용권을 선택해 주세요.");
         System.out.println("1. 시간 이용권(자유석) | 2. 주단위 이용권(자유석) | 3. 1인 고정석");
     }
@@ -50,13 +50,12 @@ public class OutputHandler {
             System.out.println("사물함: " + lockerPass.display());
         }
 
-        double discountRate = selectedPass.getDiscountRate();
-        int discountPrice = (int) (selectedPass.getPrice() * discountRate);
+        int discountPrice = selectedPass.calculateDiscountPrice();
         if (discountPrice > 0) {
             System.out.println("이벤트 할인 금액: " + discountPrice + "원");
         }
 
-        int totalPrice = selectedPass.getPrice() - discountPrice + (lockerPass != null ? lockerPass.getPrice() : 0);
+        int totalPrice = selectedPass.calculateTotalPriceWith(lockerPass);
         System.out.println("총 결제 금액: " + totalPrice + "원");
         System.out.println();
     }

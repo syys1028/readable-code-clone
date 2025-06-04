@@ -10,6 +10,7 @@ import cleancode.studycafe.mission.model.StudyCafePass;
 import cleancode.studycafe.mission.model.StudyCafePassType;
 
 import java.util.List;
+import java.util.Optional;
 
 public class StudyCafePassMachine {
 
@@ -18,12 +19,11 @@ public class StudyCafePassMachine {
 
     public void run() {
         try {
-            ioHandler.showWelcomeMessage();
-            ioHandler.showAnnouncement();
+            ioHandler.showStartupMessage();
 
             StudyCafePass selectedPass = selectPass();
-            checkUseableLocker(selectedPass);
-
+            Optional<StudyCafeLockerPass> lockerPass = selectLockerIfAvailable(selectedPass);
+            showFinalSummary(selectedPass, lockerPass);
         } catch (AppException e) {
             ioHandler.showSimpleMessage(e.getMessage());
         } catch (Exception e) {
@@ -31,36 +31,18 @@ public class StudyCafePassMachine {
         }
     }
 
-    private void checkUseableLocker(StudyCafePass selectedPass) {
-        if (selectedPass.isFixedType()) {
-            selectLocks(selectedPass);
-        }
-        else {
-            showPassSummaryWithoutLocker(selectedPass);
-        }
+    private Optional<StudyCafeLockerPass> selectLockerIfAvailable(StudyCafePass selectedPass) {
+        if (!selectedPass.isFixedType()) return Optional.empty();
+
+        StudyCafeLockerPass lockerOption = selectLockerOption(selectedPass);
+        if (lockerOption == null) return Optional.empty();
+
+        boolean selected = ioHandler.askLockerPass(lockerOption);
+        return selected ? Optional.of(lockerOption) : Optional.empty();
     }
 
-    private void selectLocks(StudyCafePass selectedPass) {
-        StudyCafeLockerPass lockerPass = selectLockerOption(selectedPass);
-        if (lockerPass != null) {
-            processLockerSelection(selectedPass, lockerPass);
-        } else {
-            showPassSummaryWithoutLocker(selectedPass);
-        }
-    }
-
-    private void processLockerSelection(StudyCafePass selectedPass, StudyCafeLockerPass lockerPass) {
-        boolean isLockerSelected = ioHandler.askLockerPass(lockerPass);
-
-        if (isLockerSelected) {
-            ioHandler.showPassOrderSummary(selectedPass, lockerPass);
-        } else {
-            showPassSummaryWithoutLocker(selectedPass);
-        }
-    }
-
-    private void showPassSummaryWithoutLocker(StudyCafePass pass) {
-        ioHandler.showPassOrderSummary(pass, null);
+    private void showFinalSummary(StudyCafePass selectedPass, Optional<StudyCafeLockerPass> lockerPass) {
+        ioHandler.showPassOrderSummary(selectedPass, lockerPass.orElse(null));
     }
 
     private StudyCafePass selectPass() {

@@ -1,5 +1,6 @@
 package cleancode.studycafe.mission.io;
 
+import cleancode.studycafe.mission.model.PassDisplayer;
 import cleancode.studycafe.mission.model.PassOrder;
 import cleancode.studycafe.mission.model.StudyCafeLockerPass;
 import cleancode.studycafe.mission.model.StudyCafePass;
@@ -28,7 +29,7 @@ public class OutputHandler {
         System.out.println("이용권 목록");
         for (int index = 0; index < passes.size(); index++) {
             StudyCafePass pass = passes.get(index);
-            System.out.println(String.format("%s. ", index + 1) + pass.display());
+            System.out.println(String.format("%s. ", index + 1) + PassDisplayer.display(pass));
         }
     }
 
@@ -36,7 +37,7 @@ public class OutputHandler {
         System.out.println();
         String askMessage = String.format(
             "사물함을 이용하시겠습니까? (%s)",
-            lockerPass.display()
+            PassDisplayer.display(lockerPass)
         );
 
         System.out.println(askMessage);
@@ -46,9 +47,9 @@ public class OutputHandler {
     public void showPassOrderSummary(PassOrder order) {
         System.out.println();
         System.out.println("이용 내역");
-        System.out.println("이용권: " +  order.getPass().display());
+        System.out.println("이용권: " +  PassDisplayer.display(order.getPass()));
         if (order.getLockerPass() != null) {
-            System.out.println("사물함: " + (order.getLockerPass().display()));
+            System.out.println("사물함: " + (PassDisplayer.display(order.getLockerPass())));
         }
 
         int discountPrice = order.getPass().calculateDiscountPrice();

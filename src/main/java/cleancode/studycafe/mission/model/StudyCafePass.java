@@ -1,6 +1,6 @@
 package cleancode.studycafe.mission.model;
 
-public class StudyCafePass {
+public class StudyCafePass implements PassDisplay{
 
     private final StudyCafePassType passType;
     private final int duration;
@@ -40,19 +40,6 @@ public class StudyCafePass {
 
     public double getDiscountRate() {
         return discountRate;
-    }
-
-    public String display() {
-        if (passType == StudyCafePassType.HOURLY) {
-            return String.format("%s시간권 - %d원", duration, price);
-        }
-        if (passType == StudyCafePassType.WEEKLY) {
-            return String.format("%s주권 - %d원", duration, price);
-        }
-        if (passType == StudyCafePassType.FIXED) {
-            return String.format("%s주권 - %d원", duration, price);
-        }
-        return "";
     }
 
     public int calculateDiscountPrice() {

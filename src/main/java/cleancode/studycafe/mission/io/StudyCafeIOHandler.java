@@ -1,5 +1,6 @@
 package cleancode.studycafe.mission.io;
 
+import cleancode.studycafe.mission.model.PassOrder;
 import cleancode.studycafe.mission.model.StudyCafeLockerPass;
 import cleancode.studycafe.mission.model.StudyCafePass;
 import cleancode.studycafe.mission.model.StudyCafePassType;
@@ -20,8 +21,8 @@ public class StudyCafeIOHandler {
         outputHandler.showSimpleMessage(message);
     }
 
-    public void showPassOrderSummary(StudyCafePass selectedPass, StudyCafeLockerPass lockerPass) {
-        outputHandler.showPassOrderSummary(selectedPass, lockerPass);
+    public void showPassOrderSummary(PassOrder passOrder) {
+        outputHandler.showPassOrderSummary(passOrder);
     }
 
     public StudyCafePassType askPassTypeSelecting() {

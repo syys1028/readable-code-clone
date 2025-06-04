@@ -59,6 +59,10 @@ public class StudyCafePass {
         return (int) (price * getDiscountRate());
     }
 
+    public int calculateDiscountedPrice() {
+        return getPrice() - calculateDiscountPrice();
+    }
+
     public int calculateTotalPriceWith(StudyCafeLockerPass lockerPass) {
         int lockerPrice = lockerPass != null ? lockerPass.getPrice() : 0;
         return price - calculateDiscountPrice() + lockerPrice;

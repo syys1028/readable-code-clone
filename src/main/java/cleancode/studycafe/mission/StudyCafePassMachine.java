@@ -5,6 +5,7 @@ import cleancode.studycafe.mission.io.InputHandler;
 import cleancode.studycafe.mission.io.OutputHandler;
 import cleancode.studycafe.mission.io.StudyCafeFileHandler;
 import cleancode.studycafe.mission.io.StudyCafeIOHandler;
+import cleancode.studycafe.mission.model.PassOrder;
 import cleancode.studycafe.mission.model.StudyCafeLockerPass;
 import cleancode.studycafe.mission.model.StudyCafePass;
 import cleancode.studycafe.mission.model.StudyCafePassType;
@@ -42,7 +43,8 @@ public class StudyCafePassMachine {
     }
 
     private void showFinalSummary(StudyCafePass selectedPass, Optional<StudyCafeLockerPass> lockerPass) {
-        ioHandler.showPassOrderSummary(selectedPass, lockerPass.orElse(null));
+        PassOrder passOrder = new PassOrder(selectedPass, lockerPass.orElse(null));
+        ioHandler.showPassOrderSummary(passOrder);
     }
 
     private StudyCafePass selectPass() {

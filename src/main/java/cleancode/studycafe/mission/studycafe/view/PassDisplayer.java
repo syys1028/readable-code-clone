@@ -3,6 +3,9 @@ package cleancode.studycafe.mission.studycafe.view;
 import cleancode.studycafe.mission.studycafe.model.pass.StudyCafePassType;
 
 public class PassDisplayer {
+
+    private PassDisplayer() {}
+
     public static String display(PassDisplay pass) {
         StudyCafePassType passType = pass.getPassType();
         int duration = pass.getDuration();

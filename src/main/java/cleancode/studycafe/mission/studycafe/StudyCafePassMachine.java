@@ -1,6 +1,8 @@
 package cleancode.studycafe.mission.studycafe;
 
 import cleancode.studycafe.mission.studycafe.exception.AppException;
+import cleancode.studycafe.mission.studycafe.io.FileHandler;
+import cleancode.studycafe.mission.studycafe.io.IOHandler;
 import cleancode.studycafe.mission.studycafe.io.StudyCafeFileHandler;
 import cleancode.studycafe.mission.studycafe.io.StudyCafeIOHandler;
 import cleancode.studycafe.mission.studycafe.model.order.PassOrder;
@@ -11,8 +13,13 @@ import java.util.Optional;
 
 public class StudyCafePassMachine {
 
-    private final StudyCafeIOHandler ioHandler = new StudyCafeIOHandler();
-    private final StudyCafeFileHandler studyCafeFileHandler = new StudyCafeFileHandler();
+    private final IOHandler ioHandler;
+    private final FileHandler fileHandler;
+
+    public StudyCafePassMachine() {
+        this.ioHandler = new StudyCafeIOHandler();
+        this.fileHandler = new StudyCafeFileHandler();
+    }
 
     public void run() {
         try {
@@ -20,7 +27,7 @@ public class StudyCafePassMachine {
 
             StudyCafePass selectedPass = selectPass();
             Optional<StudyCafeLockerPass> lockerPass = selectLockerIfAvailable(selectedPass);
-            showFinalSummary(selectedPass, lockerPass);
+            showFinalSummary(selectedPass, lockerPass.orElse(null));
         } catch (AppException e) {
             ioHandler.showSimpleMessage(e.getMessage());
         } catch (Exception e) {
@@ -53,17 +60,17 @@ public class StudyCafePassMachine {
     }
 
     private StudyCafeLockerPass findMatchingLocker(StudyCafePass selectedPass) {
-        LockerPasses lockerPasses = studyCafeFileHandler.readLockerPasses();
+        LockerPasses lockerPasses = fileHandler.readLockerPasses();
         return lockerPasses.findMatchingFor(selectedPass);
     }
 
-    private void showFinalSummary(StudyCafePass selectedPass, Optional<StudyCafeLockerPass> lockerPass) {
-        PassOrder passOrder = new PassOrder(selectedPass, lockerPass.orElse(null));
+    private void showFinalSummary(StudyCafePass selectedPass, StudyCafeLockerPass lockerPass) {
+        PassOrder passOrder = new PassOrder(selectedPass, lockerPass);
         ioHandler.showPassOrderSummary(passOrder);
     }
 
     private List<StudyCafePass> filterPassByType(StudyCafePassType studyCafePassType) {
-        StudyCafePasses studyCafePasses = studyCafeFileHandler.readStudyCafePasses();
+        StudyCafePasses studyCafePasses = fileHandler.readStudyCafePasses();
         return studyCafePasses.findByType(studyCafePassType);
     }
 

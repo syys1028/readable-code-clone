@@ -47,12 +47,12 @@ public class OutputHandler {
     public void showPassOrderSummary(PassOrder order) {
         System.out.println();
         System.out.println("이용 내역");
-        System.out.println("이용권: " +  PassDisplayer.display(order.getPass()));
-        if (order.getLockerPass() != null) {
-            System.out.println("사물함: " + (PassDisplayer.display(order.getLockerPass())));
+        System.out.println("이용권: " +  PassDisplayer.display(order.pass()));
+        if (order.lockerPass() != null) {
+            System.out.println("사물함: " + (PassDisplayer.display(order.lockerPass())));
         }
 
-        int discountPrice = order.getPass().calculateDiscountPrice();
+        int discountPrice = order.pass().calculateDiscountPrice();
         if (discountPrice > 0) {
             System.out.println("이벤트 할인 금액: " + discountPrice + "원");
         }

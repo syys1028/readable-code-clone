@@ -7,7 +7,7 @@ import cleancode.studycafe.mission.studycafe.model.pass.StudyCafePassType;
 
 import java.util.List;
 
-public class StudyCafeIOHandler {
+public class StudyCafeIOHandler implements IOHandler {
 
     private final InputHandler inputHandler = new InputHandler();
     private final OutputHandler outputHandler = new OutputHandler();

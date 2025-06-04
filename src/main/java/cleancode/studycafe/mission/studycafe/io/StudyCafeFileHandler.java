@@ -8,18 +8,18 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
 
-public class StudyCafeFileHandler {
+public class StudyCafeFileHandler implements FileHandler {
 
     public StudyCafePasses readStudyCafePasses() {
         return new StudyCafePasses(
             readCsvLines("src/main/resources/cleancode/studycafe/pass-list.csv").stream()
-            .map(values -> StudyCafePass.of(
-                StudyCafePassType.valueOf(values[0]),
-                Integer.parseInt(values[1]),
-                Integer.parseInt(values[2]),
-                Double.parseDouble(values[3])
-            ))
-            .toList()
+                .map(values -> StudyCafePass.of(
+                    StudyCafePassType.valueOf(values[0]),
+                    Integer.parseInt(values[1]),
+                    Integer.parseInt(values[2]),
+                    Double.parseDouble(values[3])
+                ))
+                .toList()
         );
     }
 

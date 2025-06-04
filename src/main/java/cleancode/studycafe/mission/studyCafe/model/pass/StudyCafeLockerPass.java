@@ -1,4 +1,4 @@
-package cleancode.studycafe.mission.studyCafe.model.order;
+package cleancode.studycafe.mission.studyCafe.model.pass;
 
 import cleancode.studycafe.mission.studyCafe.view.PassDisplay;
 

@@ -1,9 +1,9 @@
 package cleancode.studycafe.mission.studyCafe.io;
 
 import cleancode.studycafe.mission.studyCafe.view.PassDisplayer;
-import cleancode.studycafe.mission.studyCafe.model.pass.PassOrder;
-import cleancode.studycafe.mission.studyCafe.model.order.StudyCafeLockerPass;
-import cleancode.studycafe.mission.studyCafe.model.order.StudyCafePass;
+import cleancode.studycafe.mission.studyCafe.model.order.PassOrder;
+import cleancode.studycafe.mission.studyCafe.model.pass.StudyCafeLockerPass;
+import cleancode.studycafe.mission.studyCafe.model.pass.StudyCafePass;
 
 import java.util.List;
 

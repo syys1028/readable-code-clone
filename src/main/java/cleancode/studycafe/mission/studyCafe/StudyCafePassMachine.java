@@ -4,9 +4,7 @@ import cleancode.studycafe.mission.studyCafe.exception.AppException;
 import cleancode.studycafe.mission.studyCafe.io.StudyCafeFileHandler;
 import cleancode.studycafe.mission.studyCafe.io.StudyCafeIOHandler;
 import cleancode.studycafe.mission.studyCafe.model.order.PassOrder;
-import cleancode.studycafe.mission.studyCafe.model.pass.StudyCafeLockerPass;
-import cleancode.studycafe.mission.studyCafe.model.pass.StudyCafePass;
-import cleancode.studycafe.mission.studyCafe.model.pass.StudyCafePassType;
+import cleancode.studycafe.mission.studyCafe.model.pass.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -60,18 +58,13 @@ public class StudyCafePassMachine {
     }
 
     private List<StudyCafePass> findPassByType(StudyCafePassType studyCafePassType) {
-        List<StudyCafePass> studyCafePasses = studyCafeFileHandler.readStudyCafePasses();
-        return studyCafePasses.stream()
-            .filter(studyCafePass -> studyCafePass.hasSameTypeAs(studyCafePassType))
-            .toList();
+        StudyCafePasses studyCafePasses = studyCafeFileHandler.readStudyCafePasses();
+        return studyCafePasses.findByType(studyCafePassType);
     }
 
     private StudyCafeLockerPass selectLockerOption(StudyCafePass selectedPass) {
-        List<StudyCafeLockerPass> lockerPasses = studyCafeFileHandler.readLockerPasses();
-        return lockerPasses.stream()
-            .filter(option -> option.matchesPass(selectedPass))
-            .findFirst()
-            .orElse(null);
+        LockerPasses lockerPasses = studyCafeFileHandler.readLockerPasses();
+        return lockerPasses.findMatchingFor(selectedPass);
     }
 
 }

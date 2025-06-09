@@ -28,8 +28,11 @@ public class StudyCafePassMachine {
             ioHandler.showWelcomeMessage();
             ioHandler.showAnnouncement();
 
+            // #1~3
             StudyCafeSeatPass selectedPass = selectPass();
+            // #4~5
             Optional<StudyCafeLockerPass> optionalLockerPass = selectLockerPass(selectedPass);
+            // #6
             StudyCafePassOrder passOrder = StudyCafePassOrder.of(
                 selectedPass,
                 optionalLockerPass.orElse(null)

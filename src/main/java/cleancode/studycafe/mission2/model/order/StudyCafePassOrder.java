@@ -15,7 +15,7 @@ public class StudyCafePassOrder {
         this.lockerPass = lockerPass;
     }
 
-    public static StudyCafePassOrder of(StudyCafeSeatPass seatPass, StudyCafeLockerPass lockerPass) {
+    public static StudyCafePassOrder of(StudyCafeSeatPass seatPass, StudyCafeLockerPass lockerPass) { // #6 check
         return new StudyCafePassOrder(seatPass, lockerPass);
     }
 

@@ -10,6 +10,7 @@ import static org.assertj.core.api.Assertions.*;
 
 @DisplayName("파일에서 이용권을 읽어오는 테스트")
 class SeatPassFileReaderTest {
+
     @DisplayName("CSV 파일을 읽어 이용권 목록을 반환한다")
     @Test
     void readPassesFromCsvFile() {

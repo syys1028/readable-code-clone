@@ -68,7 +68,7 @@ class InputHandlerTest {
     @Test
     void selectYesReturnTrue() {
         // given
-        System.setIn(new ByteArrayInputStream("1\n".getBytes())); // 사용자 입력 시뮬레이션
+        System.setIn(new ByteArrayInputStream("1\n".getBytes()));
         InputHandler inputHandler = new InputHandler();
 
         // when

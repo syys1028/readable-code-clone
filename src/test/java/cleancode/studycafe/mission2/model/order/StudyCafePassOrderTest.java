@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.*;
 
-@DisplayName("이용권 주문 및 금액 계산")
+@DisplayName("이용권 주문 및 금액 계산 테스트")
 class StudyCafePassOrderTest {
 
     @DisplayName("락커 미포함 시간권 주문: 할인 없음")

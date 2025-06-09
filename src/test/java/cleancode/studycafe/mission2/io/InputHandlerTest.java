@@ -63,4 +63,32 @@ class InputHandlerTest {
         // then
         assertThat(selected).isEqualTo(pass2);
     }
+
+    @DisplayName("사용자가 락커 이용권을 선택하면 true를 반환한다")
+    @Test
+    void selectYesReturnTrue() {
+        // given
+        System.setIn(new ByteArrayInputStream("1\n".getBytes())); // 사용자 입력 시뮬레이션
+        InputHandler inputHandler = new InputHandler();
+
+        // when
+        boolean result = inputHandler.getLockerSelection();
+
+        // then
+        assertThat(result).isTrue();
+    }
+
+    @DisplayName("사용자가 락커 이용권을 선택하지 않으면 false를 반환한다")
+    @Test
+    void selectNoReturnFalse() {
+        // given
+        System.setIn(new ByteArrayInputStream("2\n".getBytes()));
+        InputHandler inputHandler = new InputHandler();
+
+        // when
+        boolean result = inputHandler.getLockerSelection();
+
+        // then
+        assertThat(result).isFalse();
+    }
 }

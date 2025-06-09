@@ -68,18 +68,16 @@ public class StudyCafePassMachine {
         // #4
         Optional<StudyCafeLockerPass> lockerPassCandidate = findLockerPassCandidateBy(selectedPass);
 
-        // #5
         if (lockerPassCandidate.isPresent()) {
             StudyCafeLockerPass lockerPass = lockerPassCandidate.get();
 
-            // #6
+            // #5
             boolean isLockerSelected = ioHandler.askLockerPass(lockerPass);
             if (isLockerSelected) {
                 return Optional.of(lockerPass);
             }
         }
 
-        // #7
         return Optional.empty();
     }
 

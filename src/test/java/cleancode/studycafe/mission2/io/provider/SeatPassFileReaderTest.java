@@ -2,6 +2,7 @@ package cleancode.studycafe.mission2.io.provider;
 
 import cleancode.studycafe.mission2.model.pass.StudyCafePassType;
 import cleancode.studycafe.mission2.model.pass.StudyCafeSeatPasses;
+import cleancode.studycafe.mission2.provider.SeatPassProvider;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -13,7 +14,7 @@ class SeatPassFileReaderTest {
     @Test
     void readPassesFromCsvFile() {
         // given
-        SeatPassFileReader reader = new SeatPassFileReader();
+        SeatPassProvider reader = new SeatPassFileReader();
 
         // when
         StudyCafeSeatPasses passes = reader.getSeatPasses();

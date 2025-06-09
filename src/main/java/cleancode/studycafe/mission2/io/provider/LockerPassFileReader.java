@@ -16,7 +16,7 @@ public class LockerPassFileReader implements LockerPassProvider {
     private static final String LOCKER_LIST_CSV_PATH = "src/main/resources/cleancode/studycafe/locker.csv";
 
     @Override
-    public StudyCafeLockerPasses getLockerPasses() {
+    public StudyCafeLockerPasses getLockerPasses() {    // #4-1 check
         try {
             List<String> lines = Files.readAllLines(Paths.get(LOCKER_LIST_CSV_PATH));
             List<StudyCafeLockerPass> lockerPasses = new ArrayList<>();

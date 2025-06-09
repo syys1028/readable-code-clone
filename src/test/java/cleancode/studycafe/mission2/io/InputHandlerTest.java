@@ -14,16 +14,16 @@ import static org.assertj.core.api.Assertions.*;
 @DisplayName("이용권 타입 입력 테스트")
 class InputHandlerTest {
 
-    private void provideUserInput(String input) {
+    private InputHandler givenInputHandler(String input) {
         System.setIn(new ByteArrayInputStream(input.getBytes()));
+        return new InputHandler();
     }
 
     @DisplayName("1을 입력하면 HOURLY 타입을 반환한다")
     @Test
     void inputOneReturnHourly() {
         // given
-        provideUserInput("1");
-        InputHandler inputHandler = new InputHandler();
+        InputHandler inputHandler = givenInputHandler("1");
 
         // when
         StudyCafePassType result = inputHandler.getPassTypeSelectingUserAction();
@@ -36,8 +36,7 @@ class InputHandlerTest {
     @Test
     void returnException() {
         // given
-        provideUserInput("999");
-        InputHandler inputHandler = new InputHandler();
+        InputHandler inputHandler = givenInputHandler("999");
 
         // when & then
         assertThatThrownBy(inputHandler::getPassTypeSelectingUserAction)
@@ -49,8 +48,7 @@ class InputHandlerTest {
     @Test
     void inputTwoReturnSecondPass() {
         // given
-        provideUserInput("2");
-        InputHandler inputHandler = new InputHandler();
+        InputHandler inputHandler = givenInputHandler("2");
 
         StudyCafeSeatPass pass1 = StudyCafeSeatPass.of(StudyCafePassType.HOURLY, 1, 1000, 0.0);
         StudyCafeSeatPass pass2 = StudyCafeSeatPass.of(StudyCafePassType.WEEKLY, 2, 2000, 0.1);
@@ -68,8 +66,7 @@ class InputHandlerTest {
     @Test
     void selectYesReturnTrue() {
         // given
-        System.setIn(new ByteArrayInputStream("1\n".getBytes()));
-        InputHandler inputHandler = new InputHandler();
+        InputHandler inputHandler = givenInputHandler("1");
 
         // when
         boolean result = inputHandler.getLockerSelection();
@@ -82,8 +79,7 @@ class InputHandlerTest {
     @Test
     void selectNoReturnFalse() {
         // given
-        System.setIn(new ByteArrayInputStream("2\n".getBytes()));
-        InputHandler inputHandler = new InputHandler();
+        InputHandler inputHandler = givenInputHandler("2");
 
         // when
         boolean result = inputHandler.getLockerSelection();

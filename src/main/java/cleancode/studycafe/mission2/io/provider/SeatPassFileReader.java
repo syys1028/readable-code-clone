@@ -16,7 +16,7 @@ public class SeatPassFileReader implements SeatPassProvider {
     private static final String PASS_LIST_CSV_PATH = "src/main/resources/cleancode/studycafe/pass-list.csv";
 
     @Override
-    public StudyCafeSeatPasses getSeatPasses() {
+    public StudyCafeSeatPasses getSeatPasses() {    // #2-1 check
         try {
             List<String> lines = Files.readAllLines(Paths.get(PASS_LIST_CSV_PATH));
             List<StudyCafeSeatPass> studyCafeSeatPasses = new ArrayList<>();

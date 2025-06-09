@@ -55,11 +55,9 @@ public class StudyCafePassMachine {
     }
 
     private List<StudyCafeSeatPass> findPassCandidatesBy(StudyCafePassType studyCafePassType) {
-        // #2-1
-        StudyCafeSeatPasses allPasses = seatPassProvider.getSeatPasses();
+        StudyCafeSeatPasses allPasses = seatPassProvider.getSeatPasses();   // #2-1 check
 
-        // #2-2
-        return allPasses.findPassBy(studyCafePassType);
+        return allPasses.findPassBy(studyCafePassType);   // #2-2 check
     }
 
     private Optional<StudyCafeLockerPass> selectLockerPass(StudyCafeSeatPass selectedPass) {

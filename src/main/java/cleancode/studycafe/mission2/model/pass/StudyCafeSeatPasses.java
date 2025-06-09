@@ -14,7 +14,7 @@ public class StudyCafeSeatPasses {
         return new StudyCafeSeatPasses(passes);
     }
 
-    public List<StudyCafeSeatPass> findPassBy(StudyCafePassType studyCafePassType) {
+    public List<StudyCafeSeatPass> findPassBy(StudyCafePassType studyCafePassType) {     // #2-2 check
         return passes.stream()
             .filter(studyCafePass -> studyCafePass.isSamePassType(studyCafePassType))
             .toList();

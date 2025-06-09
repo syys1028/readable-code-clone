@@ -30,7 +30,7 @@ public class StudyCafeIOHandler {
 
     public StudyCafePassType askPassTypeSelecting() {
         outputHandler.askPassTypeSelection();
-        return inputHandler.getPassTypeSelectingUserAction();   // check
+        return inputHandler.getPassTypeSelectingUserAction();   // #1 check
     }
 
     public StudyCafeSeatPass askPassSelecting(List<StudyCafeSeatPass> passCandidates) {

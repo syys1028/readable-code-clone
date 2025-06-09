@@ -44,14 +44,21 @@ public class StudyCafePassMachine {
     }
 
     private StudyCafeSeatPass selectPass() {
+        // #1
         StudyCafePassType passType = ioHandler.askPassTypeSelecting();
+
+        // #2
         List<StudyCafeSeatPass> passCandidates = findPassCandidatesBy(passType);
 
+        // #3
         return ioHandler.askPassSelecting(passCandidates);
     }
 
     private List<StudyCafeSeatPass> findPassCandidatesBy(StudyCafePassType studyCafePassType) {
+        // #2-1
         StudyCafeSeatPasses allPasses = seatPassProvider.getSeatPasses();
+
+        // #2-2
         return allPasses.findPassBy(studyCafePassType);
     }
 

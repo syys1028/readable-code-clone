@@ -10,9 +10,15 @@
 
 ---
 
-## 📚 강의 출처
-- [📘 Readable Code: 읽기 좋은 코드를 작성하는 사고법](https://www.inflearn.com/course/readable-code) ✅
-- [🧪 Practical Testing: 실용적인 테스트 가이드](https://www.inflearn.com/course/practical-testing) 
+## 🔗 저장소 링크
+
+- 📘 **[Readable Code 실습 저장소](https://github.com/syys1028/readable-code-clone)**  
+  읽기 좋은 코드를 위한 리팩토링 실습 저장소입니다.  
+  클린 코드 원칙에 따라 네이밍, 메서드 분리, 추상화 수준 정리를 중심으로 실습을 진행했습니다.
+
+- 🧪 **[Practical Testing 실습 저장소](https://github.com/syys1028/practical-testing-clone)**  
+  단위 테스트, 통합 테스트, TDD 등 실무 테스트 전략을 실습한 저장소입니다.  
+  JUnit5, Mockito 등을 활용하여 신뢰성 있는 테스트 코드를 작성했습니다.
 
 ---
 
@@ -32,8 +38,15 @@
 - [Day11 - 미션 4 (테스트 작성)](https://github.com/syys1028/readable-code/tree/day11-mission)
 - [Day16 - 미션 5](https://www.inflearn.com/blogs/11104)
 - [Day18 - 미션 6](https://www.inflearn.com/blogs/11153)
+
 ---
 
 ## 🗂️ 강의 필기 (Notion)
 - [📘 Readable Code 강의 필기](https://astonishing-print-3c1.notion.site/Readable-Code-2008e4df1c728074ac22e78cd6951a8d?source=copy_link)
 - [🧪 Practical Testing 강의 필기](https://astonishing-print-3c1.notion.site/Practical-Testing-20a8e4df1c728083aac7cf0e64dc2361?source=copy_link)
+
+---
+
+## 📚 강의 출처
+- [📘 Readable Code: 읽기 좋은 코드를 작성하는 사고법](https://www.inflearn.com/course/readable-code) ✅
+- [🧪 Practical Testing: 실용적인 테스트 가이드](https://www.inflearn.com/course/practical-testing) 

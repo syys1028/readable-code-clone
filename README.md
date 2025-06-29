@@ -12,7 +12,7 @@
 
 ## 🔗 저장소 링크
 
-- 📘 [Readable Code 바로가기](https://github.com/syys1028/readable-code-clone)  ✅ 현재   
+- 📘 [Readable Code 바로가기](https://github.com/syys1028/readable-code-clone)  ✅
   읽기 좋은 코드를 위한 리팩토링 공부 및 실습 기록입니다.  
   클린 코드 원칙에 따라 네이밍, 메서드 분리, 추상화 수준 정리를 중심으로 진행했습니다.
 

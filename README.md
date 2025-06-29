@@ -12,12 +12,12 @@
 
 ## 🔗 저장소 링크
 
-- 📘 [Readable Code 실습 저장소](https://github.com/syys1028/readable-code-clone)  
-  읽기 좋은 코드를 위한 리팩토링 실습 저장소입니다.  
-  클린 코드 원칙에 따라 네이밍, 메서드 분리, 추상화 수준 정리를 중심으로 실습을 진행했습니다.
+- 📘 [Readable Code 바로가기](https://github.com/syys1028/readable-code-clone)  ✅ 현재   
+  읽기 좋은 코드를 위한 리팩토링 공부 및 실습 기록입니다.  
+  클린 코드 원칙에 따라 네이밍, 메서드 분리, 추상화 수준 정리를 중심으로 진행했습니다.
 
-- 🧪 [Practical Testing 실습 저장소](https://github.com/syys1028/practical-testing-clone)  
-  단위 테스트, 통합 테스트, TDD 등 실무 테스트 전략을 실습한 저장소입니다.  
+- 🧪 [Practical Testing 바로가기](https://github.com/syys1028/practical-testing-clone)  
+  단위 테스트, 통합 테스트, TDD 등 실무 테스트 전략을 공부했습니다.  
   JUnit5, Mockito 등을 활용하여 신뢰성 있는 테스트 코드를 작성했습니다.
 
 ---
